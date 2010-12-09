@@ -1,0 +1,39 @@
+<html>
+
+<link href="/css/style.css" type="text/css" rel="stylesheet">
+
+<body>
+<div class="greeting">
+ {{greeting}}
+</div>
+<br/></br>
+
+{% for shout in shouts %}
+<div class="shout">
+
+{{shout.content|escape}} <br />
+by:
+<span style="color:blue"> 
+{% if shout.author %}
+    {{shout.author|escape}}
+
+{% else %}
+    anonymouse
+{% endif %}
+
+{%if is_admin%}
+<form method=post action="/sign">
+ <input type="hidden" name=id value="{{shout.key.id}}"/>
+ <input type=submit name=delete value=delete />
+</form>
+{%endif%}
+    </div>
+{% endfor %}
+</span>
+<form method=post action="/sign">
+<textarea name="shoutout" ></textarea>
+<input type=submit value="shout"/>
+</form>
+
+</body>
+</html>

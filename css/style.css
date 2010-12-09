@@ -1,0 +1,22 @@
+
+a:hover, a:visited, a:link, a:active {
+    color:blue;
+}
+
+body {
+    background-color:#F3F3F3;
+}
+
+.greeting{
+    background:#F7CE8A;
+    color:#000;
+    border-bottom:navy 1px solid;
+}
+
+.shout {
+    color:navy;
+    background:#fff;
+    border-bottom:navy 1px dotted;
+    margin:20px 0 20px;
+    width:300px;
+}
